@@ -41,7 +41,7 @@
     <!--End of Header-->
 
     <!--Cards-->
-    <div class="container">
+    <div class="container" id="containerCards">
       <div class="col s12 m7">
         <div class="card horizontal">
           <div class="card-image">
@@ -69,38 +69,40 @@
     <div id="modal1" class="modal">
       <br />
       <div class="container">
-       
-          <form class="col s12">
-            <div class="row">
-              <b>Título de la receta: </b>
-              <div class="input-field col s12">
-                <input id="formTitle" type="text" />
-              </div>
+        <form class="col s12">
+          <div class="row">
+            <b>Título de la receta: </b>
+            <div class="input-field col s12">
+              <input id="formTitle" type="text" />
             </div>
-            <div class="row">
-              <b>Descripción: </b>
-              <div class="input-field col s12">
-                <textarea
-                  id="formDesc"
-                  class="materialize-textarea"
-                ></textarea>
-              </div>
-            </div>
-            <div class="row">
-              <div class="input-field col s6">
-                <b>Costo de fabricación: </b>
-                <input id="formCost" type="number" />
-              </div>
-              <div class="input-field col s6">
-                <b>Precio sugerido de venta: </b>
-                <input id="formPrice" type="number" />
-              </div>
-            </div>
-          </form>
-          <div class="col s12 offset-s10">
-            <a class="waves-effect waves-light btn">Guardar</a>
           </div>
+          <div class="row">
+            <b>Descripción: </b>
+            <div class="input-field col s12">
+              <textarea id="formDesc" class="materialize-textarea"></textarea>
+            </div>
+          </div>
+          <div class="row">
+            <div class="input-field col s6">
+              <b>Costo de fabricación: </b>
+              <input id="formCost" type="number" />
+            </div>
+            <div class="input-field col s6">
+              <b>Precio sugerido de venta: </b>
+              <input id="formPrice" type="number" />
+            </div>
+          </div>
+          <div class="row">
+            <b>Imagen: </b>
+            <div class="input-field col s12">
+              <input id="formImg" type="text" />
+            </div>
+          </div>
+        </form>
+        <div class="col s12 offset-s10">
+          <a class="waves-effect waves-light btn" id="saveData">Guardar</a>
         </div>
+        <br />
       </div>
     </div>
     <!--Modal End-->
@@ -108,5 +110,6 @@
     <!--JS links-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script src="app.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   </body>
 </html>
