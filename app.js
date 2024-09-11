@@ -6,8 +6,27 @@ let formPrice = document.getElementById("formPrice");
 let formImg = document.getElementById("formImg");
 let saveData = document.getElementById("saveData");
 let containerCards = document.getElementById("containerCards");
+let btnSearch = document.getElementById("btnSearch");
+let formSearch = document.getElementById("formSearch");
 
 const getData = window.localStorage;
+//localStorage.clear();
+//localStorage.removeItem();
+
+btnSearch.addEventListener("click", () => {
+  searchRec();
+});
+
+function searchRec() {
+  let recipe = JSON.parse(getData.getItem("tituloReceta"));
+
+  for (let i = 1; i < localStorage.length + 1; i++) {
+    if (localStorage.getItem(i) == formSearch.value) {
+    }
+  }
+}
+
+PrintInfo();
 
 //Modal initialize
 document.addEventListener("DOMContentLoaded", function () {
@@ -24,30 +43,30 @@ saveData.addEventListener("click", () => {
     imagen: formImg.value,
   };
 
-  getData.setItem(JSON.stringify(newObject));
+  console.log("hola :3");
+
+  getData.setItem(localStorage.length + 1, JSON.stringify(newObject));
   PrintInfo();
 });
 
 function PrintInfo() {
-  containerCards.innerHTML = "";
+  //containerCards.innerHTML = "";
   let getKeys = Object.keys(getData);
   getKeys.map((thisKey) => {
     let recipe = JSON.parse(getData.getItem(thisKey));
     let infoHere = `<div class="col s12 m7">
         <div class="card horizontal">
           <div class="card-image">
-            <img src="${recipe.imagen}" />
+            <img src="${recipe.imagen}" height="300px" width="300px"/>
           </div>
           <div class="card-stacked">
             <div class="card-content">
-              <!-- <p> -->
               <b>${recipe.tituloReceta}</b>
               <ul>
                 <li>${recipe.descripcion}</li>
                 <li>costo de fabricacion: ${recipe.costo}</li>
                 <li>precio sugerido de venta: ${recipe.precio}</li>
               </ul>
-              <!-- </p> -->
             </div>
           </div>
         </div>
